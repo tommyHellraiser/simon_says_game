@@ -112,8 +112,12 @@ h2 {
 
 @media(max-width: 600px) {
   .button {
-      height: 170px;
-      width: 170px;
+      height: 150px;
+      width: 150px;
+  }
+
+  .button-container {
+      padding: 10px;
   }
 }
 
