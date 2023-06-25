@@ -79,6 +79,12 @@ h2 {
   height: 95vh;
 }
 
+@media (max-width: 600px) {
+    .container {
+        height:85vh;
+    }
+}
+
 /* Button container settings */
 .buttons-container {
   display: flex;
@@ -126,6 +132,7 @@ h2 {
   .button {
       height: 150px;
       width: 150px;
+      transition: all 0.05s;
   }
 
   .button {
