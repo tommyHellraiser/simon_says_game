@@ -2,17 +2,10 @@ let game_status = "off";
 let sequence = [];
 let player_sequence_counter = 0;
 let button= {
-    green: "green",
-    red: "red",
-    yellow: "yellow",
-    blue: "blue"
-};
-
-let button_sounds = {
-    "green": new Audio("sounds/green.mp3"),
-    "red": new Audio("sounds/red.mp3"),
-    "yellow": new Audio("sounds/yellow.mp3"),
-    "blue": new Audio("sounds/blue.mp3")
+    green: "sounds/green.mp3",
+    red: "sounds/red.mp3",
+    yellow: "sounds/yellow.mp3",
+    blue: "sounds/blue.mp3"
 };
 
 for (let i = 0; i < 20; i++) {
@@ -102,7 +95,14 @@ function validate_sequence (input) {
     }
 }
 function game_logic (button_pressed) {
-    if (button_sounds.hasOwnProperty(button_pressed)) {
-        button_sounds[button_pressed].play();
-    }
+    play_audio(button_pressed);
+    // if (button.hasOwnProperty(button_pressed)) {
+    //     alert("Found property");
+    //     //button_sounds[button_pressed].play();
+    //     new Audio(button[button_pressed]).play();
+    // }
+}
+
+function play_audio (button_pressed) {
+    new Audio(button_pressed).play();
 }
