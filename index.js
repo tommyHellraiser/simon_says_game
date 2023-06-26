@@ -1,34 +1,66 @@
 
-$(".button").on("mousedown", function(e) {
-    $(this).addClass("button-active");
+$(".green-button").on("mousedown", function(e) {
+    $(this).addClass("green-button-active");
 }).on("mouseup", function(e) {
-    $(this).removeClass("button-active");
+    $(this).removeClass("green-button-active");
 }).on(".button").on("touchstart", function(e) {
-    $(this).addClass("button-active");
+    $(this).addClass("green-button-active");
 }).on("touchend", function(e) {
-    $(this).removeClass("button-active button-hover");
+    $(this).removeClass("green-button-active green-button-hover");
 });
 
-// $(".button").on("mouseup", function(e) {
-//     $(this).removeClass("button-active");
-// });
+$(".red-button").on("mousedown", function(e) {
+    $(this).addClass("red-button-active");
+}).on("mouseup", function(e) {
+    $(this).removeClass("red-button-active");
+}).on(".button").on("touchstart", function(e) {
+    $(this).addClass("red-button-active");
+}).on("touchend", function(e) {
+    $(this).removeClass("red-button-active red-button-hover");
+});
 
-// $(".button").on("touchstart", function(e) {
-//     $(this).addClass("button-active");
-// });
+$(".yellow-button").on("mousedown", function(e) {
+    $(this).addClass("yellow-button-active");
+}).on("mouseup", function(e) {
+    $(this).removeClass("yellow-button-active");
+}).on(".button").on("touchstart", function(e) {
+    $(this).addClass("yellow-button-active");
+}).on("touchend", function(e) {
+    $(this).removeClass("yellow-button-active yellow-button-hover");
+});
 
-// $(".button").on("touchend", function(e) {
-//     $(this).removeClass("button-active button-hover");
-// });
+$(".blue-button").on("mousedown", function(e) {
+    $(this).addClass("blue-button-active");
+}).on("mouseup", function(e) {
+    $(this).removeClass("blue-button-active");
+}).on(".button").on("touchstart", function(e) {
+    $(this).addClass("blue-button-active");
+}).on("touchend", function(e) {
+    $(this).removeClass("blue-button-active blue-button-hover");
+});
 
 if ($(window).width() > 768) {
-    $(".button").on("mouseover", function(e) {
-        $(this).addClass("button-hover");
+    $(".green-button").on("mouseover", function(e) {
+        $(this).addClass("green-button-hover");
     }).on("mouseout", function(e) {
-        $(this).removeClass("button-hover");
+        $(this).removeClass("green-button-hover");
     });
 
-    // $(".button").on("mouseout", function(e) {
-    //     $(this).removeClass("button-hover");
-    // });
+    $(".red-button").on("mouseover", function(e) {
+        $(this).addClass("red-button-hover");
+    }).on("mouseout", function(e) {
+        $(this).removeClass("red-button-hover");
+    });
+
+    $(".yellow-button").on("mouseover", function(e) {
+        $(this).addClass("yellow-button-hover");
+    }).on("mouseout", function(e) {
+        $(this).removeClass("yellow-button-hover");
+    });
+
+    $(".blue-button").on("mouseover", function(e) {
+        $(this).addClass("blue-button-hover");
+    }).on("mouseout", function(e) {
+        $(this).removeClass("blue-button-hover");
+    });
 }
