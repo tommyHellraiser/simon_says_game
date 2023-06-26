@@ -8,6 +8,13 @@ let button= {
     blue: "blue"
 };
 
+let button_sounds = {
+    "green": new Audio("sounds/green.mp3"),
+    "red": new Audio("sounds/red.mp3"),
+    "yellow": new Audio("sounds/yellow.mp3"),
+    "blue": new Audio("sounds/blue.mp3")
+};
+
 for (let i = 0; i < 20; i++) {
     sequence.push(Math.floor(Math.random() * 4));
 }
@@ -95,5 +102,7 @@ function validate_sequence (input) {
     }
 }
 function game_logic (button_pressed) {
-
+    if (button_sounds.hasOwnProperty(button_pressed)) {
+        button_sounds[button_pressed].play();
+    }
 }
