@@ -39,12 +39,12 @@ $(".green-button").on("mousedown", function() {
     $(this).addClass("green-button-active");
     setTimeout(function (){
         game_logic(button.green);
-    }, 100);
+    }.bind(this), 100);
 }).on("touchstart", function() {
     $(this).addClass("green-button-active");
     setTimeout(function (){
         game_logic(button.green);
-    }, 100);
+    }.bind(this), 100);
 }).on("mouseup", function() {
     $(this).removeClass("green-button-active");
 }).on("touchend", function() {
@@ -55,12 +55,12 @@ $(".red-button").on("mousedown", function() {
     $(this).addClass("red-button-active");
     setTimeout(function (){
         game_logic(button.red);
-    }, 100);
+    }.bind(this), 100);
 }).on("touchstart", function() {
     $(this).addClass("red-button-active");
     setTimeout(function (){
         game_logic(button.red);
-    }, 100);
+    }.bind(this), 100);
 }).on("mouseup", function() {
     $(this).removeClass("red-button-active");
 }).on("touchend", function() {
@@ -71,12 +71,12 @@ $(".yellow-button").on("mousedown", function() {
     $(this).addClass("yellow-button-active");
     setTimeout(function (){
         game_logic(button.yellow);
-    }, 100);
+    }.bind(this), 100);
 }).on("touchstart", function() {
     $(this).addClass("yellow-button-active");
     setTimeout(function (){
         game_logic(button.yellow);
-    }, 100);
+    }.bind(this), 100);
 }).on("mouseup", function() {
     $(this).removeClass("yellow-button-active");
 }).on("touchend", function() {
@@ -87,12 +87,12 @@ $(".blue-button").on("mousedown", function() {
     $(this).addClass("blue-button-active")
     setTimeout(function (){
         game_logic(button.blue);
-    }, 100);
+    }.bind(this), 100);
 }).on("touchstart", function() {
     $(this).addClass("blue-button-active");
     setTimeout(function (){
         game_logic(button.blue);
-    }, 100);
+    }.bind(this), 100);
 }).on("mouseup", function() {
     $(this).removeClass("blue-button-active");
 }).on("touchend", function() {
