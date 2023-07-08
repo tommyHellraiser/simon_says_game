@@ -83,6 +83,7 @@ if ($(window).width() > 768) {
     $(".green-button").on("mousedown", function() {
         $(this).addClass("green-button-active");
         setTimeout(function (){
+            alert("Click registered");
             game_logic(button.green);
         }.bind(this), 100);
     }).on("mouseover", function() {
@@ -94,6 +95,7 @@ if ($(window).width() > 768) {
     $(".red-button").on("mousedown", function() {
         $(this).addClass("red-button-active");
         setTimeout(function (){
+            alert("Click registered");
             game_logic(button.red);
         }.bind(this), 100);
     }).on("mouseover", function() {
@@ -105,6 +107,7 @@ if ($(window).width() > 768) {
     $(".yellow-button").on("mousedown", function() {
         $(this).addClass("yellow-button-active");
         setTimeout(function (){
+            alert("Click registered");
             game_logic(button.yellow);
         }.bind(this), 100);
     }).on("mouseover", function() {
@@ -116,6 +119,7 @@ if ($(window).width() > 768) {
     $(".blue-button").on("mousedown", function() {
         $(this).addClass("blue-button-active")
         setTimeout(function (){
+            alert("Click registered");
             game_logic(button.blue);
         }.bind(this), 100);
     }).on("mouseover", function() {
