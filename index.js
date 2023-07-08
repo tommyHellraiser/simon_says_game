@@ -35,12 +35,7 @@ for (let i = 0; i < 20; i++) {
     sequence.push(Math.floor(Math.random() * 4));
 }
 
-$(".green-button").on("mousedown", function() {
-    $(this).addClass("green-button-active");
-    setTimeout(function (){
-        game_logic(button.green);
-    }.bind(this), 100);
-}).on("touchstart", function() {
+$(".green-button").on("touchstart", function() {
     $(this).addClass("green-button-active");
     setTimeout(function (){
         game_logic(button.green);
@@ -51,12 +46,7 @@ $(".green-button").on("mousedown", function() {
     $(this).removeClass("green-button-active green-button-hover");
 });
 
-$(".red-button").on("mousedown", function() {
-    $(this).addClass("red-button-active");
-    setTimeout(function (){
-        game_logic(button.red);
-    }.bind(this), 100);
-}).on("touchstart", function() {
+$(".red-button").on("touchstart", function() {
     $(this).addClass("red-button-active");
     setTimeout(function (){
         game_logic(button.red);
@@ -67,12 +57,7 @@ $(".red-button").on("mousedown", function() {
     $(this).removeClass("red-button-active red-button-hover");
 });
 
-$(".yellow-button").on("mousedown", function() {
-    $(this).addClass("yellow-button-active");
-    setTimeout(function (){
-        game_logic(button.yellow);
-    }.bind(this), 100);
-}).on("touchstart", function() {
+$(".yellow-button").on("touchstart", function() {
     $(this).addClass("yellow-button-active");
     setTimeout(function (){
         game_logic(button.yellow);
@@ -83,12 +68,7 @@ $(".yellow-button").on("mousedown", function() {
     $(this).removeClass("yellow-button-active yellow-button-hover");
 });
 
-$(".blue-button").on("mousedown", function() {
-    $(this).addClass("blue-button-active")
-    setTimeout(function (){
-        game_logic(button.blue);
-    }.bind(this), 100);
-}).on("touchstart", function() {
+$(".blue-button").on("touchstart", function() {
     $(this).addClass("blue-button-active");
     setTimeout(function (){
         game_logic(button.blue);
@@ -100,25 +80,45 @@ $(".blue-button").on("mousedown", function() {
 });
 
 if ($(window).width() > 768) {
-    $(".green-button").on("mouseover", function() {
+    $(".green-button").on("mousedown", function() {
+        $(this).addClass("green-button-active");
+        setTimeout(function (){
+            game_logic(button.green);
+        }.bind(this), 100);
+    }).on("mouseover", function() {
         $(this).addClass("green-button-hover");
     }).on("mouseout", function() {
         $(this).removeClass("green-button-hover");
     });
 
-    $(".red-button").on("mouseover", function() {
+    $(".red-button").on("mousedown", function() {
+        $(this).addClass("red-button-active");
+        setTimeout(function (){
+            game_logic(button.red);
+        }.bind(this), 100);
+    }).on("mouseover", function() {
         $(this).addClass("red-button-hover");
     }).on("mouseout", function() {
         $(this).removeClass("red-button-hover");
     });
 
-    $(".yellow-button").on("mouseover", function() {
+    $(".yellow-button").on("mousedown", function() {
+        $(this).addClass("yellow-button-active");
+        setTimeout(function (){
+            game_logic(button.yellow);
+        }.bind(this), 100);
+    }).on("mouseover", function() {
         $(this).addClass("yellow-button-hover");
     }).on("mouseout", function() {
         $(this).removeClass("yellow-button-hover");
     });
 
-    $(".blue-button").on("mouseover", function() {
+    $(".blue-button").on("mousedown", function() {
+        $(this).addClass("blue-button-active")
+        setTimeout(function (){
+            game_logic(button.blue);
+        }.bind(this), 100);
+    }).on("mouseover", function() {
         $(this).addClass("blue-button-hover");
     }).on("mouseout", function() {
         $(this).removeClass("blue-button-hover");
