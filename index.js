@@ -13,11 +13,13 @@ for (let i = 0; i < 20; i++) {
 }
 
 $(".green-button").on("mousedown", function() {
-    $(this).addClass("green-button-active");
-    game_logic(button.green);
+    $(this).addClass("green-button-active").delay(100).queue(function() {
+        game_logic(button.green);
+    });
 }).on("touchstart", function() {
-    $(this).addClass("green-button-active");
-    game_logic(button.green);
+    $(this).addClass("green-button-active").delay(100).queue(function() {
+        game_logic(button.green);
+    });
 }).on("mouseup", function() {
     $(this).removeClass("green-button-active");
 }).on("touchend", function() {
@@ -25,11 +27,13 @@ $(".green-button").on("mousedown", function() {
 });
 
 $(".red-button").on("mousedown", function() {
-    $(this).addClass("red-button-active");
-    game_logic(button.red);
+    $(this).addClass("red-button-active").delay(100).queue(function() {
+        game_logic(button.red);
+    });
 }).on("touchstart", function() {
-    $(this).addClass("red-button-active");
-    game_logic(button.red);
+    $(this).addClass("red-button-active").delay(100).queue(function() {
+        game_logic(button.red);
+    });
 }).on("mouseup", function() {
     $(this).removeClass("red-button-active");
 }).on("touchend", function() {
@@ -37,11 +41,13 @@ $(".red-button").on("mousedown", function() {
 });
 
 $(".yellow-button").on("mousedown", function() {
-    $(this).addClass("yellow-button-active");
-    game_logic(button.yellow);
+    $(this).addClass("yellow-button-active").delay(100).queue(function() {
+        game_logic(button.yellow);
+    });
 }).on("touchstart", function() {
-    $(this).addClass("yellow-button-active");
-    game_logic(button.yellow);
+    $(this).addClass("yellow-button-active").delay(100).queue(function(){
+        game_logic(button.yellow);
+    });
 }).on("mouseup", function() {
     $(this).removeClass("yellow-button-active");
 }).on("touchend", function() {
@@ -49,11 +55,13 @@ $(".yellow-button").on("mousedown", function() {
 });
 
 $(".blue-button").on("mousedown", function() {
-    $(this).addClass("blue-button-active");
-    game_logic(button.blue);
+    $(this).addClass("blue-button-active").delay(100).queue(function() {
+        game_logic(button.blue);
+    });
 }).on("touchstart", function() {
-    $(this).addClass("blue-button-active");
-    game_logic(button.blue);
+    $(this).addClass("blue-button-active").delay(100).queue(function() {
+        game_logic(button.blue);
+    });
 }).on("mouseup", function() {
     $(this).removeClass("blue-button-active");
 }).on("touchend", function() {
@@ -104,5 +112,7 @@ function game_logic (button_pressed) {
 }
 
 function play_audio (button_pressed) {
-    new Audio(button_pressed).play();
+    if ($(window).width > 1000) {
+        //new Audio(button_pressed).play();
+    }
 }
