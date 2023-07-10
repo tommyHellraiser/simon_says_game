@@ -74,7 +74,7 @@ function main_game_logic(button) {
         all_buttons.removeClass("light-up-green").removeClass("light-up-red");
         set_header_text("Follow the sequence");
         set_text_from_level_counter(current_level);
-        button_animate_press(button_pressed);
+        //button_animate_press(button_pressed);
         setTimeout(function() {
             light_up_button(game_sequence[current_level - 1]);
         }, 1000);
