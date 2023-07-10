@@ -27,10 +27,10 @@ let game_sequence = [];
 //let sequence_counter = 0;
 let current_level = 0;
 let button= {
-    green: "sounds/green.mp3",
-    red: "sounds/red.mp3",
-    yellow: "sounds/yellow.mp3",
-    blue: "sounds/blue.mp3"
+    green: "sounds/green-button.mp3",
+    red: "sounds/red-button.mp3",
+    yellow: "sounds/yellow-button.mp3",
+    blue: "sounds/blue-button.mp3"
 };
 //let rick_roll = "sounds/rick_roll.mp3";
 let rick_audio = document.getElementById("rick_roll");
@@ -68,6 +68,10 @@ function main_game_logic(button) {
     let button_pressed = $(button).attr("id");
     
     console.log("Button pressed: " + button_pressed);
+    play_audio_from_button(button_pressed);
+    // if (window_width > 600) {
+    //     play_audio_from_button(button_pressed);
+    // }
 
     if (!game_started) {
         rick_audio.pause();
@@ -90,6 +94,12 @@ function main_game_logic(button) {
     button_animate_press(button_pressed);
 
     check_sequence();
+}
+
+function play_audio_from_button(button) {
+    let audio_file_path = "sounds/" + button + ".mp3";
+    let audio = new Audio(audio_file_path);
+    audio.play();
 }
 
 function button_animate_press(button_pressed) {
@@ -156,14 +166,21 @@ function next_level() {
 function light_up_button(sequence_index) {
     let button_to_light_up = button_colors[sequence_index];
     
+    
+    
     let light_up_class = "light-up";
     
     setTimeout(function() {
         //$("#" + button_to_light_up).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
+        play_audio_from_button(button_to_light_up);
+        // if (window_width > 600) {
+        //     play_audio_from_button(button_to_light_up);
+        // }
         $("#" + button_to_light_up).addClass(light_up_class);
         setTimeout(function() {
             $("#" + button_to_light_up).removeClass(light_up_class);
         }, 500);
+        
     }, 500);
     
     // $("#" + button_to_light_up).addClass(light_up_class);
