@@ -1,4 +1,4 @@
-const MAX_LEVEL = 3;
+const MAX_LEVEL = 10;
 // let game_status = "off";
 // const status_switch = {
 //     playing: "playing",
