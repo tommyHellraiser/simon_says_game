@@ -46,10 +46,6 @@ let all_buttons = $(".button");
 
 let window_width = $(window).width();
 
-for (let i = 0; i < MAX_LEVEL; i++) {
-    game_sequence.push((Math.floor(Math.random() * 4)));
-}
-
 if (window_width > 768) {
     //  On bigger screens
     all_buttons.on("mousedown", function() {
@@ -70,6 +66,7 @@ function main_game_logic(button) {
     console.log("Button pressed: " + button_pressed);
     
     if (!game_started) {
+        generate_random_sequence_until(MAX_LEVEL);
         rick_audio.pause();
         rick_audio.currentTime = 0;
         game_started = true;
@@ -95,6 +92,13 @@ function main_game_logic(button) {
     button_animate_press(button_pressed);
 
     check_sequence();
+}
+
+function generate_random_sequence_until(limit) {
+    game_sequence = [];
+    for (let i = 0; i < limit; i++) {
+        game_sequence.push((Math.floor(Math.random() * 4)));
+    }
 }
 
 function play_audio_from_button(button) {
@@ -166,9 +170,7 @@ function next_level() {
 
 function light_up_button(sequence_index) {
     let button_to_light_up = button_colors[sequence_index];
-    
-    
-    
+
     let light_up_class = "light-up";
     
     setTimeout(function() {
