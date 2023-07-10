@@ -57,10 +57,9 @@ if ($(window).width() > 768) {
 } else {
     //  On phones
     all_buttons.on("touchstart", function() {
-        // setTimeout(function() {
-        //     main_game_logic(this);
-        // },150);
-        main_game_logic(this);
+        setTimeout(function() {
+            main_game_logic(this);
+        }.bind(this),100);
     });
 }
 
