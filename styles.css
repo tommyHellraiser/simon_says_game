@@ -16,7 +16,7 @@ body {
 
 @media (max-width: 600px) {
     .header-text-container {
-        height: 150px;
+        height: 130px;
     }
 }
 
@@ -45,6 +45,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 95vh;
     touch-action: manipulation;
 }
@@ -208,12 +209,13 @@ h2 {
 
 /* Level indicator settings */
 .level-indicator {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 50px;
-  padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 5%;
+    height: 150px;
 }
 
 @media (max-width: 600px) {

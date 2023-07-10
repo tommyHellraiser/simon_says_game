@@ -33,6 +33,7 @@ let button= {
 };
 //let rick_roll = "sounds/rick_roll.mp3";
 let rick_audio = document.getElementById("rick_roll");
+let stoopid_audio = document.getElementById("stoopid_audio");
 //let play_sequence = false;
 
 let game_started = false;
@@ -69,6 +70,8 @@ function main_game_logic(button) {
     console.log("Button pressed: " + button_pressed);
 
     if (!game_started) {
+        rick_audio.pause();
+        rick_audio.currentTime = 0;
         game_started = true;
         current_level++;
         all_buttons.removeClass("light-up-green").removeClass("light-up-red");
@@ -99,14 +102,6 @@ function button_animate_press(button_pressed) {
 }
 
 function check_sequence() {
-    // alert(
-    //     "Player sequence: " + player_sequence + "\n" 
-    //     + "Current value of player sequence: " + player_sequence[current_level - 1] + "\n" 
-    //     + "Player sequence length: " + player_sequence.length + "\n"
-    //     + "Current level: " + current_level + "\n"
-    //     + "Game sequence: " + game_sequence + "\n"
-    //     + "Current value of game sequence: " + game_sequence[current_level - 1] + "\n"
-    // );
     if (player_sequence[player_sequence_index] === game_sequence[player_sequence_index]) {
         if (player_sequence.length === current_level) {
             //  Next level
@@ -126,20 +121,21 @@ function check_sequence() {
 }
 
 function game_won() {
-    //rick_audio.play();
-    set_header_text("Congratulations, you won!!");
+    rick_audio.play();
+    set_header_text("Congrats, you won!!");
     all_buttons.addClass("light-up-green");
     reset_status();
 }
 
 function game_lost() {
     all_buttons.addClass("light-up-red");
+    stoopid_audio.play();
     set_header_text("You lost! :( Try again!");
     reset_status();
 }
 
 function reset_status() {
-    set_level_text("Press any Button");
+    set_level_text("Press any Button to Continue");
     player_sequence = [];
     player_sequence_index = 0;
     game_started = false;
@@ -184,7 +180,7 @@ function light_up_all_buttons(light_up_class) {
 }
 
 function set_text_from_level_counter(level_counter) {
-    $("#level-text").text(level_switch[level_counter] + ": " + game_sequence[level_counter - 1]);
+    $("#level-text").text(level_switch[level_counter]);
 }
 
 function set_header_text(text) {
