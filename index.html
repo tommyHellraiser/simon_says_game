@@ -38,18 +38,21 @@
 <!--  </div>-->
 <div class="container">
 
-  <h1 id="level-title">Welcome to Simon Says!!</h1>
+  <div class="header-text-container">
+    <h1 id="header-text">Welcome to Simon Says!!</h1>
+  </div>
+
 
   <div class="buttons-container">
 
     <div class="button-row">
 
-      <button type="button" class="green-button button">
+      <button type="button" class="green-button button" id="green-button">
 
       </button>
 
 
-      <button type="button" class="red-button button">
+      <button type="button" class="red-button button" id="red-button">
 
       </button>
     </div>
@@ -57,11 +60,11 @@
 
     <div class="button-row">
 
-      <button type="button" class="yellow-button button">
+      <button type="button" class="yellow-button button" id="yellow-button">
 
       </button>
 
-      <button type="button" class="blue-button button">
+      <button type="button" class="blue-button button" id="blue-button">
 
       </button>
 
@@ -70,8 +73,12 @@
   </div>
 
   <div class="level-indicator">
-    <h2 id="level-number">Press any Button to Start</h2>
+    <h2 id="level-text">Press any Button to Start</h2>
   </div>
+
+  <audio id="rick_roll">
+    <source src="sounds/rick_roll.mp3" type="audio/mpeg">
+  </audio>
 
 </div>
 

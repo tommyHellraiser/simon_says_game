@@ -8,15 +8,21 @@ body {
   background-color: #011F3F;
 }
 
-#level-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+.header-text-container {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+
+#header-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    margin: 5%;
+    color: #FEF2BF;
 }
 
 @media(max-width: 1000px) {
-  #level-title {
+  #header-text {
     font-size: 2rem;
   }
 }
@@ -30,28 +36,29 @@ h2 {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
     touch-action: manipulation;
 }
 
 @media (max-width: 600px) {
     .container {
-        height:85vh;
+        height:95vh;
     }
 }
 
 /* Button container settings */
 .buttons-container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .button-row {
@@ -76,14 +83,20 @@ h2 {
     transition: all 0.15s;
 }
 
+/*.button-pressed {*/
+/*    box-shadow: 0 0 20px white;*/
+/*    background-color: grey;*/
+/*}*/
+
 .green-button {
     background-color: #2ECC40;
 }
 
-.green-button-hover {
-    background-color: #259633;
-    box-shadow: 0 0 50px #2ECC40;
-}
+/*.green-button-hover {*/
+/*.green-button:hover {*/
+/*    background-color: #259633;*/
+/*    box-shadow: 0 0 50px #2ECC40;*/
+/*}*/
 
 .green-button-active {
     background-color: #1b6b26;
@@ -91,14 +104,19 @@ h2 {
     transform: scale(0.97);
 }
 
+.green-button-flash {
+    background-color: #000000;
+}
+
 .red-button {
     background-color: #FF4136;
 }
 
-.red-button-hover {
-    background-color: #c0322c;
-    box-shadow: 0 0 50px #FF4136;
-}
+/*.red-button-hover {*/
+/*.red-button:hover {*/
+/*    background-color: #c0322c;*/
+/*    box-shadow: 0 0 50px #FF4136;*/
+/*}*/
 
 .red-button-active {
     background-color: #7a201d;
@@ -110,10 +128,11 @@ h2 {
     background-color: #FFDC00;
 }
 
-.yellow-button-hover {
-    background-color: #c2b100;
-    box-shadow: 0 0 50px #FFDC00;
-}
+/*.yellow-button-hover {*/
+/*.yellow-button:hover {*/
+/*    background-color: #c2b100;*/
+/*    box-shadow: 0 0 50px #FFDC00;*/
+/*}*/
 
 .yellow-button-active {
     background-color: #7a6f00;
@@ -125,15 +144,42 @@ h2 {
     background-color: #0074D9;
 }
 
-.blue-button-hover {
-    background-color: #0059b3;
-    box-shadow: 0 0 50px #0074D9;
-}
+/*.blue-button-hover {*/
+/*.blue-button:hover {*/
+/*    background-color: #0059b3;*/
+/*    box-shadow: 0 0 50px #0074D9;*/
+/*}*/
 
 .blue-button-active {
     background-color: #003366;
     box-shadow: 0 0 50px #0074D9;
     transform: scale(0.97);
+}
+
+.light-up {
+    box-shadow: 0 0 70px #ffffff;
+}
+
+.light-up-green {
+    box-shadow: 0 0 100px #2ECC40;
+}
+
+.light-up-red {
+    box-shadow: 0 0 100px #FF4136;
+}
+
+@media (max-width: 600px) {
+    .light-up-green {
+        box-shadow: 0 0 50px #2ECC40;
+    }
+
+    .light-up-red {
+        box-shadow: 0 0 50px #FF4136;
+    }
+
+    .light-up {
+        box-shadow: 0 0 50px #ffffff;
+    }
 }
 
 @media(max-width: 600px) {
