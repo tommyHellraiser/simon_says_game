@@ -139,7 +139,7 @@ function game_lost() {
 }
 
 function reset_status() {
-    set_level_text("Press any Button to Start");
+    set_level_text("Press any Button");
     player_sequence = [];
     player_sequence_index = 0;
     game_started = false;
