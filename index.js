@@ -21,7 +21,8 @@ const level_switch = {
     11: "Congratulations, you won!!"
 };
 //let sequence = [];
-let game_sequence = [3, 2, 3, 2, 1, 3, 3, 1, 3, 0, 1, 1, 2, 0, 0, 3, 2, 0, 0, 2];
+//let game_sequence = [3, 2, 3, 2, 1, 3, 3, 1, 3, 0, 1, 1, 2, 0, 0, 3, 2, 0, 0, 2];
+let game_sequence = [];
 
 //let sequence_counter = 0;
 let current_level = 0;
@@ -34,23 +35,22 @@ let button= {
 //let rick_roll = "sounds/rick_roll.mp3";
 let rick_audio = document.getElementById("rick_roll");
 let stoopid_audio = document.getElementById("stoopid_audio");
-//let play_sequence = false;
 
 let game_started = false;
 let button_colors = ["green-button", "red-button", "yellow-button", "blue-button"];
-
-//$("#level-number").text(level_switch[level_counter]);
 
 let player_sequence = [];
 let player_sequence_index = 0;
 
 let all_buttons = $(".button");
 
-// for (let i = 0; i < MAX_LEVEL; i++) {
-//     sequence.push((Math.floor(Math.random() * 4)));
-// }
+let window_width = $(window).width();
 
-if ($(window).width() > 768) {
+for (let i = 0; i < MAX_LEVEL; i++) {
+    game_sequence.push((Math.floor(Math.random() * 4)));
+}
+
+if (window_width > 768) {
     //  On bigger screens
     all_buttons.on("mousedown", function() {
         main_game_logic(this);
