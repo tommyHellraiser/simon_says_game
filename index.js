@@ -68,11 +68,7 @@ function main_game_logic(button) {
     let button_pressed = $(button).attr("id");
     
     console.log("Button pressed: " + button_pressed);
-    play_audio_from_button(button_pressed);
-    // if (window_width > 600) {
-    //     play_audio_from_button(button_pressed);
-    // }
-
+    
     if (!game_started) {
         rick_audio.pause();
         rick_audio.currentTime = 0;
@@ -87,6 +83,11 @@ function main_game_logic(button) {
         }, 1000);
         return;
     }
+
+    play_audio_from_button(button_pressed);
+    // if (window_width > 600) {
+    //     play_audio_from_button(button_pressed);
+    // }
 
     player_sequence.push(button_colors.indexOf(button_pressed));
 
