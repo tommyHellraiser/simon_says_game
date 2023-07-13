@@ -81,10 +81,10 @@ function main_game_logic(button) {
         return;
     }
 
-    play_audio_from_button(button_pressed);
-    // if (window_width > 600) {
-    //     play_audio_from_button(button_pressed);
-    // }
+    //play_audio_from_button(button_pressed);
+    if (window_width > 600) {
+        play_audio_from_button(button_pressed);
+    }
 
     player_sequence.push(button_colors.indexOf(button_pressed));
 
@@ -175,10 +175,10 @@ function light_up_button(sequence_index) {
     
     setTimeout(function() {
         //$("#" + button_to_light_up).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
-        play_audio_from_button(button_to_light_up);
-        // if (window_width > 600) {
-        //     play_audio_from_button(button_to_light_up);
-        // }
+        //play_audio_from_button(button_to_light_up);
+        if (window_width > 600) {
+            play_audio_from_button(button_to_light_up);
+        }
         $("#" + button_to_light_up).addClass(light_up_class);
         setTimeout(function() {
             $("#" + button_to_light_up).removeClass(light_up_class);
